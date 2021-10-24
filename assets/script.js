@@ -10,10 +10,10 @@ var generatePassword = function() {
   //Get password length, if invalid, keep asking
   while(1) {
     var promptPWlength = window.prompt('What is the password length? Enter number between 8 and 128:');
-    if (promptPWlength === "" || promptPWlength === null) {
+    if (promptPWlength === "" || promptPWlength === null || isNaN(promptPWlength)) {
       window.alert("You need to provide a valid answer! Please try again.");
     }
-    else if (parseInt(promptPWlength) < 8 || parseInt(promptPWlength) > 128) {
+    else if (promptPWlength*1000 < 8 || promptPWlength < 8 || promptPWlength > 128) {
       window.alert("You need to provide a valid answer! Please try again.");
     } else
     break;
